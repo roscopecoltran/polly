@@ -62,6 +62,7 @@ toolchain_table = [
     Toolchain('android-ndk-r10e-api-19-armeabi-v7a-neon-c11', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-19-armeabi-v7a-neon-hid-sections', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-19-armeabi-v7a-neon-hid-sections-lto', 'Unix Makefiles'),
+    Toolchain('android-ndk-r10e-api-19-armeabi-v7a-neon-clang-libcxx', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-armeabi-v7a', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-armeabi-v7a-neon', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-armeabi-v7a-neon-hid-sections', 'Unix Makefiles'),
@@ -73,11 +74,13 @@ toolchain_table = [
     Toolchain('android-ndk-r10e-api-21-arm64-v8a-gcc-49-hid-sections', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-arm64-v8a-clang-35', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-x86', 'Unix Makefiles'),
+    Toolchain('android-ndk-r10e-api-21-x86-clang-libcxx', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-x86-64', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-x86-64-hid', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-x86-64-hid-sections', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-mips', 'Unix Makefiles'),
     Toolchain('android-ndk-r10e-api-21-mips64', 'Unix Makefiles'),
+    Toolchain('android-ndk-r10e-api-21-mips-clang-libcxx', 'Unix Makefiles'),
     Toolchain('android-ndk-r11c-api-8-armeabi-v7a', 'Unix Makefiles'),
     Toolchain('android-ndk-r11c-api-16-armeabi', 'Unix Makefiles'),
     Toolchain('android-ndk-r11c-api-16-armeabi-v7a', 'Unix Makefiles'),
@@ -109,8 +112,74 @@ toolchain_table = [
     Toolchain('android-ndk-r14-api-21-arm64-v8a-neon-clang-libcxx', 'Unix Makefiles'),
     Toolchain('android-ndk-r14-api-19-armeabi-v7a-neon-hid-sections-lto', 'Unix Makefiles'),
     Toolchain('android-ndk-r14-api-21-arm64-v8a-clang-hid-sections-lto', 'Unix Makefiles'),
+    Toolchain('android-ndk-r14-api-21-x86-64', 'Unix Makefiles'),
+
+    # Luc Michalski - 23-08-2017
+    # context: libtstunity.so, https://github.com/hellowod/u3d-plugins-development
+
+    ## API_19
+    ### armeabi-v7a
+    Toolchain('android-ndk-r15c-api-19-armeabi-v7a-neon-c11', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-armeabi-v7a-neon-clang', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-armeabi-v7a-neon-clang-libcxx', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-armeabi-v7a-neon-hid-sections-lto', 'Unix Makefiles'),
+    ### arm64
+    Toolchain('android-ndk-r15c-api-19-arm64-v8a-neon-clang-libcxx', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-arm64-v8a-clang-hid-sections-lto', 'Unix Makefiles'),
+    ### x86
+    Toolchain('android-ndk-r15c-api-19-x86', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-x86-hid', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-x86-hid-sections', 'Unix Makefiles'),
+    ### x86_64
+    Toolchain('android-ndk-r15c-api-19-x86-64', 'Unix Makefiles'),
+
+    ## API_21
+    ### armeabi-v7a
+    Toolchain('android-ndk-r15c-api-21-armeabi-v7a-neon-c11', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-armeabi-v7a-neon-clang', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-armeabi-v7a-neon-clang-libcxx', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-armeabi-v7a-neon-hid-sections-lto', 'Unix Makefiles'),
+    ### arm64
+    Toolchain('android-ndk-r15c-api-21-arm64-v8a-neon-clang-libcxx', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-arm64-v8a-clang-hid-sections-lto', 'Unix Makefiles'),
+    ### x86
+    Toolchain('android-ndk-r15c-api-21-x86', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-x86-hid', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-x86-hid-sections', 'Unix Makefiles'),
+    ### x86_64
+    Toolchain('android-ndk-r15c-api-21-x86-64', 'Unix Makefiles'),
+
+    ## Auto
+    ### armeabi-v7a
+    Toolchain('android-ndk-r15c-api-19-armeabi-v7a-neon', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-armeabi-v7a', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-armeabi', 'Unix Makefiles'),
+    ### Mips
+    Toolchain('android-ndk-r15c-api-19-mips', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-mips64', 'Unix Makefiles'),
+    ### x86_64
+    Toolchain('android-ndk-r15c-api-19-x86-64-hid', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-19-x86-64', 'Unix Makefiles'),
+    ### x86
+    Toolchain('android-ndk-r15c-api-19-x86', 'Unix Makefiles'),
+
+    ### armeabi-v7a
+    Toolchain('android-ndk-r15c-api-21-armeabi-v7a-neon', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-armeabi-v7a', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-armeabi', 'Unix Makefiles'),
+    ### Mips
+    Toolchain('android-ndk-r15c-api-21-mips', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-mips64', 'Unix Makefiles'),
+    ### x86_64
+    Toolchain('android-ndk-r15c-api-21-x86-64-hid', 'Unix Makefiles'),
+    Toolchain('android-ndk-r15c-api-21-x86-64', 'Unix Makefiles'),
+    ### x86
+    Toolchain('android-ndk-r15c-api-21-x86', 'Unix Makefiles'),
+
     Toolchain('emscripten-cxx11', 'Unix Makefiles'),
-    Toolchain('raspberrypi2-cxx11', 'Unix Makefiles')
+    Toolchain('raspberrypi2-cxx11', 'Unix Makefiles'),
+    Toolchain('raspberrypi3-gcc-pic-hid-sections', 'Unix Makefiles'),
+    Toolchain('raspberrypi3-cxx11', 'Unix Makefiles')
 ]
 
 if os.name == 'nt':
@@ -251,12 +320,20 @@ if platform.system() == 'Linux':
       Toolchain('sanitize-leak', 'Unix Makefiles'),
       Toolchain('sanitize-memory', 'Unix Makefiles'),
       Toolchain('sanitize-thread', 'Unix Makefiles'),
+      Toolchain('linux-mingw-w64', 'Unix Makefiles'),
+      Toolchain('linux-mingw-w64-cxx98', 'Unix Makefiles'),
   ]
 
 if platform.system() == 'Darwin':
   toolchain_table += [
+      Toolchain('ios-11-0-dep-8-0-libcxx-hid-sections', 'Xcode', ios_version='11.0'),
       Toolchain('ios-10-3', 'Xcode', ios_version='10.3'),
+      Toolchain('ios-10-3-dep-8-0-bitcode', 'Xcode', ios_version='10.3'),
+      Toolchain('ios-10-3-dep-9-0-bitcode', 'Xcode', ios_version='10.3'),
+      Toolchain('ios-10-3-dep-9-3-i386-armv7', 'Xcode', ios_version='10.3'),
+      Toolchain('ios-10-3-dep-9-3-x86-64-arm64', 'Xcode', ios_version='10.3'),
       Toolchain('ios-10-3-lto', 'Xcode', ios_version='10.3'),
+      Toolchain('ios-10-3-armv7', 'Xcode', ios_version='10.3'),
       Toolchain('ios-10-2', 'Xcode', ios_version='10.2'),
       Toolchain('ios-10-2-dep-9-3-armv7', 'Xcode', ios_version='10.2'),
       Toolchain('ios-10-2-dep-9-3-arm64', 'Xcode', ios_version='10.2'),
@@ -357,6 +434,7 @@ if platform.system() == 'Darwin':
       Toolchain('osx-10-12', 'Xcode', osx_version='10.12'),
       Toolchain('osx-10-12-lto', 'Xcode', osx_version='10.12'),
       Toolchain('osx-10-12-cxx98', 'Xcode', osx_version='10.12'),
+      Toolchain('osx-10-13', 'Xcode', osx_version='10.13'),
       Toolchain('osx-10-10-dep-10-7', 'Xcode', osx_version='10.10'),
       Toolchain('osx-10-10-dep-10-9-make', 'Unix Makefiles'),
       Toolchain('osx-10-11-make', 'Unix Makefiles'),
